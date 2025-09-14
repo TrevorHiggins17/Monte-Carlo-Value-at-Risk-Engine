@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # mc_var_engine.py
-# Note: quick-and-dirty research driver; not production infra.
 
 import argparse
 from pathlib import Path
@@ -11,9 +10,6 @@ from scipy.stats import skew, kurtosis, genpareto
 
 import torch
 import matplotlib.pyplot as plt
-
-
-# ---------- small helpers (keep them boring on purpose) ----------
 
 def read_returns(csv_path: Path) -> pd.DataFrame:
     if not csv_path.exists():
@@ -133,7 +129,7 @@ def plot_covid(window_df: pd.DataFrame, var_evt: dict, out_png: Path | None):
     plt.show()
 
 
-# ---------- main flow ----------
+#main flow 
 
 def main():
     ap = argparse.ArgumentParser(description="Monte Carlo + EVT VaR (FTSE100)")
@@ -206,3 +202,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
