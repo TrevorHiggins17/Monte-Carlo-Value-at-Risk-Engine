@@ -14,24 +14,24 @@ and Extreme Value Theory (EVT) tail modelling to produce the robust estimates of
 The engine was validated against the 2020 COVID crash, with it demonstrating an accuracy at the 99%–99.5% levels.  
 
 ## Workflow
-1. Data Preparation  
+1. **Data Preparation**  
    - Source: FTSE 100 historical data from [Investing.com](https://uk.investing.com/indices/uk-100-historical-data?cid=27517).  
    - Cleaned using SQL CTEs and window functions (`LAG`, `AVG`) to compute daily returns and moving averages.  
 
-2. Baseline Risk Estimation  
+2. **Baseline Risk Estimation**  
    - Historical Simulation VaR (HS) for 95% and 99%.  
    - Limitations: underestimates tails, insensitive to volatility shifts.  
 
-3. Monte Carlo Simulation  
+3. **Monte Carlo Simulation**  
    - PyTorch-based Normal MC (100K+ paths).  
    - GPU acceleration for scalable simulations.  
 
-4. Extreme Value Theory (EVT) Integration  
+4. **Extreme Value Theory (EVT) Integration**  
    - Peaks-over-threshold method (5% left tail).  
    - Generalized Pareto Distribution (GPD) fit.  
    - EVT samples spliced into MC tail → fatter, more realistic losses.  
 
-5. Backtesting (COVID Crash: Feb–Jun 2020)  
+5. **Backtesting (COVID Crash: Feb–Jun 2020)**  
    - Compared realised FTSE 100 losses to simulated VaR thresholds.  
    - The Results were as followed:  
      - 95% EVT VaR → conservative (too many breaches).  
