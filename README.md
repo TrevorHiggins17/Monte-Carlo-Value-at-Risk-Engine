@@ -3,8 +3,8 @@ Monte Carlo Value-at-Risk engine for FTSE 100 data (2018–2025), combining Post
 
 # Monte Carlo VaR Engine (Independent Research)
 
-Period: Aug 2025 – Sep 2025  
-Author: Trevor Higgins   
+**Period**: Aug 2025 – Sep 2025  
+**Author**: Trevor Higgins   
 
 ## Overview
 The project implements a Monte Carlo Value-at-Risk (VaR) engine for the FTSE 100 index data from 2018–2025.  
